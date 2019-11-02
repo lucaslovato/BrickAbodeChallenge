@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import LogInView from "./logIn";
-import SignUpView from "./signUp";
-import Main from "./main";
+import LogInView from "./views/logIn";
+import SignUpView from "./views/signUp";
+import Main from "./views/main";
 
 export default function App() {
   return (

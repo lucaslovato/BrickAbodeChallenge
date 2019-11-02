@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.background.main
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -39,11 +39,11 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     display: "flex",
-    justifyContent: "space-around",
-    flexWrap: "wrap",
-    minWidth: 100,
-    margin: 10,
-    border: "solid 1px red"
+    justifyContent: "center",
+    width: 300,
+    height: 180,
+    padding: 10,
+    border: "solid 0.5px red"
   },
   title: {
     fontSize: 14
@@ -52,8 +52,19 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 12
   },
   media: {
-    height: 150,
-    width: 200
+    margin: 30,
+    maxHeight: 100,
+    maxWidth: 150
+  },
+  tabPanel: {
+    display: "flex",
+    justifyContent: "space-around"
+  },
+  cardDiv: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap"
   }
 }));
 

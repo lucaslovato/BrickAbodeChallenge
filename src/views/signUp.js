@@ -11,8 +11,8 @@ import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Copyright from "./copyright";
-import useStyles from "./useStyles";
+import Copyright from "../components/copyright";
+import useStyles from "../utils/useStyles";
 import { Link as ReactLink } from "react-router-dom";
 
 export default function SignUpView() {
@@ -98,7 +98,7 @@ export default function SignUpView() {
                 fullWidth
                 label="Password"
                 id="standard-adornment-password"
-                type={user.showPassword ? "text" : "password"}
+                type={"password"}
                 value={user.password}
                 onChange={handleChange("password")}
               />

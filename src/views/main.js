@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import NbaTeamCard from "./nbaTeamCard";
+import NbaTeamCard from "../components/nbaTeamCard";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import useStyles from "./useStyles";
+import useStyles from "../utils/useStyles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Link as ReactLink } from "react-router-dom";
 
@@ -76,15 +76,16 @@ function Main() {
         }
       }
     );
-    const apiPromise = await response.json();
-    setNbaTeams(apiPromise.data);
-    console.log(apiPromise.data);
+    const apiCallback = await response.json();
+    setNbaTeams(apiCallback.data);
+    console.log(apiCallback.data);
   };
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs
+          className={classes.tabPanel}
           variant="fullWidth"
           value={value}
           onChange={handleChange}
@@ -95,8 +96,16 @@ function Main() {
             href="/AllNBATeams"
             {...a11yProps(0)}
           />
-          <LinkTab label="Page Two" href="/..." {...a11yProps(1)} />
-          <LinkTab label="Page Three" href="/...." {...a11yProps(2)} />
+          <LinkTab
+            label="East Conference Teams"
+            href="/..."
+            {...a11yProps(1)}
+          />
+          <LinkTab
+            label="West Conference Teams"
+            href="/...."
+            {...a11yProps(2)}
+          />
           <ReactLink to="/">
             <div className={classes.exitIcon}>
               <ExitToAppIcon />
@@ -105,7 +114,7 @@ function Main() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div>
+        <div className={classes.cardDiv}>
           {nbaTeams.map(nbaTeam => (
             <NbaTeamCard
               key={nbaTeam.id}
@@ -120,10 +129,40 @@ function Main() {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Page Two
+        <div className={classes.cardDiv}>
+          {nbaTeams.map(
+            nbaTeam =>
+              nbaTeam.conference === "East" && (
+                <NbaTeamCard
+                  key={nbaTeam.id}
+                  abbreviation={nbaTeam.abbreviation}
+                  city={nbaTeam.city}
+                  conference={nbaTeam.conference}
+                  division={nbaTeam.division}
+                  full_name={nbaTeam.full_name}
+                  name={nbaTeam.name}
+                />
+              )
+          )}
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Page Three
+        <div className={classes.cardDiv}>
+          {nbaTeams.map(
+            nbaTeam =>
+              nbaTeam.conference === "West" && (
+                <NbaTeamCard
+                  key={nbaTeam.id}
+                  abbreviation={nbaTeam.abbreviation}
+                  city={nbaTeam.city}
+                  conference={nbaTeam.conference}
+                  division={nbaTeam.division}
+                  full_name={nbaTeam.full_name}
+                  name={nbaTeam.name}
+                />
+              )
+          )}
+        </div>
       </TabPanel>
     </div>
   );
