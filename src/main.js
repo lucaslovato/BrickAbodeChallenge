@@ -107,7 +107,15 @@ function Main() {
       <TabPanel value={value} index={0}>
         <div>
           {nbaTeams.map(nbaTeam => (
-            <NbaTeamCard key={nbaTeam.id} />
+            <NbaTeamCard
+              key={nbaTeam.id}
+              abbreviation={nbaTeam.abbreviation}
+              city={nbaTeam.city}
+              conference={nbaTeam.conference}
+              division={nbaTeam.division}
+              full_name={nbaTeam.full_name}
+              name={nbaTeam.name}
+            />
           ))}
         </div>
       </TabPanel>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -15,10 +15,29 @@ import Copyright from "./copyright";
 import useStyles from "./useStyles";
 import { Link as ReactLink } from "react-router-dom";
 
-export default function SignUp() {
-  const goHome = () => {};
-
+export default function SignUpView() {
   const classes = useStyles();
+
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  });
+
+  const handleChange = prop => event => {
+    setUser({ ...user, [prop]: event.target.value });
+  };
+
+  const addUser = () => {
+    alert(`
+      New User
+      firstName: ${user.firstName}
+      lastName: ${user.lastName}
+      email: ${user.email}
+      password: ${user.password}
+    `);
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -30,7 +49,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -42,6 +61,8 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                value={user.firstName}
+                onChange={handleChange("firstName")}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -53,6 +74,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value={user.lastName}
+                onChange={handleChange("lastName")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -64,6 +87,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={user.email}
+                onChange={handleChange("email")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -71,11 +96,11 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
                 label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                id="standard-adornment-password"
+                type={user.showPassword ? "text" : "password"}
+                value={user.password}
+                onChange={handleChange("password")}
               />
             </Grid>
             <Grid item xs={12}>
@@ -87,11 +112,11 @@ export default function SignUp() {
           </Grid>
           <ReactLink to="/">
             <Button
-              onClick={goHome}
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={addUser}
             >
               Sign Up
             </Button>

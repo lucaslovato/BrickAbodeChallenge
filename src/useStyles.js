@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
-      backgroundColor: theme.palette.common.white
+      backgroundColor: "#b3b3b3"
     }
   },
   root: {
@@ -33,6 +33,27 @@ const useStyles = makeStyles(theme => ({
   exitIcon: {
     margin: theme.spacing(3, 2, 2),
     color: "white"
+  },
+  brickAbodeLogo: {
+    padding: "20px"
+  },
+  card: {
+    display: "flex",
+    justifyContent: "space-around",
+    flexWrap: "wrap",
+    minWidth: 100,
+    margin: 10,
+    border: "solid 1px red"
+  },
+  title: {
+    fontSize: 14
+  },
+  pos: {
+    marginBottom: 12
+  },
+  media: {
+    height: 150,
+    width: 200
   }
 }));
 
