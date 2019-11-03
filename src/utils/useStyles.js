@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
   brickAbodeLogo: {
     padding: "20px"
   },
+  //nba teams styles
   card: {
     display: "flex",
     justifyContent: "center",
@@ -56,6 +57,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: 100,
     maxWidth: 150
   },
+  //nba teams card styles
   tabPanel: {
     display: "flex",
     justifyContent: "space-around"
@@ -66,12 +68,36 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     flexWrap: "wrap"
   },
+  //nba player card styles
   tableRoot: {
     width: "100%",
     overflowX: "auto"
   },
   tableSize: {
     minWidth: 650
+  },
+  //home styles
+  homeIcon: {
+    marginRight: theme.spacing(2),
+    color: "white"
+  },
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6)
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4)
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6)
+  },
+  homeToolbar: {
+    display: "flex",
+    justifyContent: "space-between"
+  },
+  homeExitIcon: {
+    color: "white"
   }
 }));
 

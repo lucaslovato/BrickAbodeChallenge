@@ -53,7 +53,7 @@ function LinkTab(props) {
   );
 }
 
-export default function Main() {
+export default function NbaTeams() {
   const [nbaTeams, setNbaTeams] = useState([]);
   const classes = useStyles();
   const [value, setValue] = React.useState(0);

@@ -13,7 +13,7 @@ export default function App() {
       <Route path="/signUp" component={SignUpView} />
       <Route path="/home" component={Home} />
       <Route path="/NbaTeams" component={NbaTeams} />
-      <Route path="/NbaPlayer" component={NbaPlayer} />
+      <Route path="/NbaPlayers" component={NbaPlayer} />
     </Switch>
   );
 }

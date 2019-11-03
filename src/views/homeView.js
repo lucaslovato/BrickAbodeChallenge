@@ -1,40 +1,13 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import HomeIcon from "@material-ui/icons/Home";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import Copyright from "../components/copyright";
-
-const useStyles = makeStyles(theme => ({
-  homeIcon: {
-    marginRight: theme.spacing(2)
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6)
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4)
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6)
-  },
-  homeToolbar: {
-    display: "flex"
-  },
-  exitIcon: {
-    justifyContent: "flex-end",
-    color: "white"
-  }
-}));
+import useStyles from "../utils/useStyles";
+import Toolbar from "../components/toolbar";
 
 export default function Home() {
   const classes = useStyles();
@@ -42,17 +15,7 @@ export default function Home() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar className={classes.homeToolbar}>
-          <HomeIcon className={classes.homeIcon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Home Page
-          </Typography>
-          <Link to="/">
-            <ExitToAppIcon className={classes.exitIcon} />
-          </Link>
-        </Toolbar>
-      </AppBar>
+      <Toolbar />
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -85,9 +48,11 @@ export default function Home() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Go to NBA Players!
-                  </Button>
+                  <Link to="/nbaPlayers">
+                    <Button variant="contained" color="primary">
+                      Go to NBA Players!
+                    </Button>
+                  </Link>
                 </Grid>
               </Grid>
             </div>
