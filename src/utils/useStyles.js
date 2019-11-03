@@ -65,6 +65,13 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     flexWrap: "wrap"
+  },
+  tableRoot: {
+    width: "100%",
+    overflowX: "auto"
+  },
+  tableSize: {
+    minWidth: 650
   }
 }));
 

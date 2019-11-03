@@ -77,7 +77,7 @@ export default function LogInView() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <ReactLink to="/main">
+          <ReactLink to="/home">
             <Button
               type="submit"
               fullWidth

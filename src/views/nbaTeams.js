@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import useStyles from "../utils/useStyles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import HomeIcon from "@material-ui/icons/Home";
 import { Link as ReactLink } from "react-router-dom";
 
 function TabPanel(props) {
@@ -52,7 +53,7 @@ function LinkTab(props) {
   );
 }
 
-function Main() {
+export default function Main() {
   const [nbaTeams, setNbaTeams] = useState([]);
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -106,6 +107,11 @@ function Main() {
             href="/...."
             {...a11yProps(2)}
           />
+          <ReactLink to="/home">
+            <div className={classes.exitIcon}>
+              <HomeIcon />
+            </div>
+          </ReactLink>
           <ReactLink to="/">
             <div className={classes.exitIcon}>
               <ExitToAppIcon />
@@ -167,5 +173,3 @@ function Main() {
     </div>
   );
 }
-
-export default Main;
