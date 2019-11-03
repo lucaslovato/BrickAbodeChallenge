@@ -1,1 +1,80 @@
 # BrickAbodeChallenge
+
+![BrickAbodeLogo](./src/assets/brick-abode.png)
+
+## How does the project works
+
+The project it's a login and sign up view with the intention of save states on variables work with input changes and then when the main button is pressed show that the values are being saved.
+
+The main file after 'login' it's a navbar that calls for an open API. The project fetch this API asking for all NBA teams on the main view, the user can navigate around two other buttons it allow to see just the East conference NBA teams and the West conference NBA teams.
+
+The logout is being simulated with a exit button on the end of the navbar.
+
+## Project Structure
+
+```
+
+project
+│   README.md
+│   yarn.lock
+│   package.json
+│   package-lock.json
+│   .gitignore
+│   node_modules
+│
+└───src
+│   │   index.js
+│   │   index.css
+│   │   App.js
+│   │
+│   └───views
+│   │   │   login.js
+│   │   │   main.js
+│   │   │   signUp.js
+│   │
+│   └───components
+│   │    │   copyright.js
+│   │    │   nbaTeamCard.js
+│   │
+│   └───assets
+│       │   nbaLogo
+│       │   brick-abode.png
+│
+└───public
+    │   index.html
+    │   manifest.json
+    │   robots.txt
+
+```
+
+## Used Libraries
+
+- [ReactJS](https://en.reactjs.org)
+- [React State Hook](https://en.reactjs.org/docs/hooks-state.html)
+  - Allow the project on save state and send if necessary, turning the creation of new components dynamic and easily
+- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
+  - Helps the project with paths and routing
+- [MaterialUI](https://material-ui.com/)
+  - ReactJS css library
+
+## This project was created using
+
+`npx create-react-app appName`
+
+## usage
+
+First check if nodeJS is installed with:
+
+`npm --version`
+
+If node is not installed follow the instructions [here](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/)
+
+Installing dependencies:
+
+`npm install`
+
+Then:
+
+`npm start`
+
+Will serve the project on a computer port, the default it's `3000` but if unavailable the project ask if can run on another port.
