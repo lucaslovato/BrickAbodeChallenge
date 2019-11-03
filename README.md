@@ -61,9 +61,15 @@ project
 
 `npx create-react-app appName`
 
-## usage
+## Used API
 
-First check if nodeJS is installed with:
+The chosen API was found on a website called [rapidapi](https://rapidapi.com), at the site there's a lot of free apis to use and how to use properly.
+
+The project is using [Free NBA API](https://rapidapi.com/theapiguy/api/free-nba) to find all the NBA teams.
+
+## Usage
+
+First check if npm is installed with:
 
 `npm --version`
 
