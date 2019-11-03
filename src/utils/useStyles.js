@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
-      backgroundColor: "#b3b3b3"
+      backgroundColor: "#cfdbe2"
     }
   },
   root: {
