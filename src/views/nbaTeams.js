@@ -10,6 +10,7 @@ import useStyles from "../utils/useStyles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import HomeIcon from "@material-ui/icons/Home";
 import { Link as ReactLink } from "react-router-dom";
+import Footer from "../components/footer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -170,6 +171,7 @@ export default function NbaTeams() {
           )}
         </div>
       </TabPanel>
+      <Footer />
     </div>
   );
 }

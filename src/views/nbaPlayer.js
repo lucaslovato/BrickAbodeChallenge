@@ -29,10 +29,10 @@ export default function NbaPlayer() {
   const classes = useStyles();
 
   const [nbaPlayers, setNbaPlayers] = useState([]);
-  const [query, setQuery] = React.useState(0);
+  const [query, setQuery] = React.useState("");
 
-  const handleChange = (event, newQuery) => {
-    setQuery(newQuery);
+  const handleChange = event => {
+    setQuery(event.target.value);
   };
 
   const getNbaPlayer = async nbaPlayerName => {
@@ -77,6 +77,7 @@ export default function NbaPlayer() {
                     </InputAdornment>
                   )
                 }}
+                value={query}
                 onChange={handleChange}
               />
               <Button

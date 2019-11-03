@@ -5,9 +5,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-import Copyright from "../components/copyright";
 import useStyles from "../utils/useStyles";
 import Toolbar from "../components/toolbar";
+import Footer from "../components/footer";
 
 export default function Home() {
   const classes = useStyles();
@@ -60,20 +60,7 @@ export default function Home() {
         </div>
       </main>
       {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Free NBA API
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Dev by <strong>Lucas</strong>
-        </Typography>
-        <Copyright />
-      </footer>
+      <Footer />
       {/* End footer */}
     </React.Fragment>
   );
