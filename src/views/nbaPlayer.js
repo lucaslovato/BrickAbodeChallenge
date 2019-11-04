@@ -2,29 +2,13 @@ import React, { useState, useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "../components/toolbar";
-import { makeStyles } from "@material-ui/core/styles";
+import Footer from "../components/footer";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import SportsBasketballIcon from "@material-ui/icons/SportsBasketball";
 import PlayerTable from "../components/playerTable";
-
-const useStyles = makeStyles(theme => ({
-  nbaPlayerText: {
-    margin: theme.spacing(10)
-  },
-  margin: {
-    margin: theme.spacing(1)
-  },
-  nbaPlayerDiv: {
-    display: "flex",
-    margin: theme.spacing(10),
-    justifyContent: "center"
-  },
-  nbaPlayerButton: {
-    maxWidth: 250
-  }
-}));
+import useStyles from "../utils/useStyles";
 
 export default function NbaPlayer() {
   const classes = useStyles();
@@ -38,9 +22,9 @@ export default function NbaPlayer() {
 
   useEffect(() => {}, []);
 
-  const getNbaPlayer = async nbaPlayerName => {
+  const getNbaPlayer = async (nbaPlayerName, page = 0) => {
     const response = await fetch(
-      `https://free-nba.p.rapidapi.com/players?search=${nbaPlayerName}`,
+      `https://free-nba.p.rapidapi.com/players?page=${page}&search=${nbaPlayerName}`,
       {
         method: "GET",
         headers: {
@@ -95,11 +79,10 @@ export default function NbaPlayer() {
                 Search
               </Button>
             </form>
-          </div>
-          <div className={classes.myTableTest}>
             <PlayerTable nbaPlayers={nbaPlayers} />
           </div>
         </main>
+        <Footer />
       </CssBaseline>
     </React.Fragment>
   );

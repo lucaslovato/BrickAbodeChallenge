@@ -26,7 +26,7 @@ export default function PlayerTable({ nbaPlayers }) {
           {rows.map(row => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.first_name + row.last_name}
+                {row.first_name + " " + row.last_name}
               </TableCell>
               <TableCell align="right">{row.team.full_name}</TableCell>
               <TableCell align="right">{row.position}</TableCell>
