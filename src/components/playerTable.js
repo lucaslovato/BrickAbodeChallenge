@@ -7,20 +7,11 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-function createData(FirstName, lastName, currentTeam, position) {
-  return { FirstName, lastName, currentTeam, position };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9)
-];
-
-export default function SimpleTable({ rows }) {
+export default function PlayerTable({ nbaPlayers }) {
   const classes = useStyles();
+
+  const rows = nbaPlayers;
+
   return (
     <Paper className={classes.tableRoot}>
       <Table className={classes.tableSize} aria-label="simple table">
@@ -33,11 +24,11 @@ export default function SimpleTable({ rows }) {
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.firstName}>
+            <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.firstName + row.lastName}
+                {row.first_name + row.last_name}
               </TableCell>
-              <TableCell align="right">{row.currentTeam}</TableCell>
+              <TableCell align="right">{row.team.full_name}</TableCell>
               <TableCell align="right">{row.position}</TableCell>
             </TableRow>
           ))}

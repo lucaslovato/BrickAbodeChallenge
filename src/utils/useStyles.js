@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
-      backgroundColor: "#cfdbe2"
+      backgroundColor: "#c0c0c0"
     }
   },
   root: {
@@ -98,6 +98,10 @@ const useStyles = makeStyles(theme => ({
   },
   homeExitIcon: {
     color: "white"
+  },
+  myTableTest: {
+    display: "hidden",
+    color: "red"
   }
 }));
 

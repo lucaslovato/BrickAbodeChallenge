@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "../components/toolbar";
@@ -7,6 +7,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import SportsBasketballIcon from "@material-ui/icons/SportsBasketball";
+import PlayerTable from "../components/playerTable";
 
 const useStyles = makeStyles(theme => ({
   nbaPlayerText: {
@@ -29,11 +30,13 @@ export default function NbaPlayer() {
   const classes = useStyles();
 
   const [nbaPlayers, setNbaPlayers] = useState([]);
-  const [query, setQuery] = React.useState("");
+  const [query, setQuery] = useState("");
 
   const handleChange = event => {
     setQuery(event.target.value);
   };
+
+  useEffect(() => {}, []);
 
   const getNbaPlayer = async nbaPlayerName => {
     const response = await fetch(
@@ -81,15 +84,20 @@ export default function NbaPlayer() {
                 onChange={handleChange}
               />
               <Button
-                type="submit"
                 fullWidth
                 variant="contained"
                 color="primary"
                 className={classes.nbaPlayerButton}
+                onClick={() => {
+                  getNbaPlayer(query);
+                }}
               >
                 Search
               </Button>
             </form>
+          </div>
+          <div className={classes.myTableTest}>
+            <PlayerTable nbaPlayers={nbaPlayers} />
           </div>
         </main>
       </CssBaseline>
