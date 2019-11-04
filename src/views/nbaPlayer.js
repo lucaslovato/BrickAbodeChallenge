@@ -49,7 +49,7 @@ export default function NbaPlayer() {
             align="center"
             paragraph
           >
-            Search a NBA player by his first/last name
+            Search a NBA player by his first and or last name
           </Typography>
           <div className={classes.nbaPlayerDiv}>
             <form>
