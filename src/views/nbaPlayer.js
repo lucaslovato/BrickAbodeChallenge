@@ -23,6 +23,7 @@ export default function NbaPlayer() {
   useEffect(() => {}, []);
 
   const getNbaPlayer = async (nbaPlayerName, page = 0) => {
+    
     const response = await fetch(
       `https://free-nba.p.rapidapi.com/players?page=${page}&search=${nbaPlayerName}`,
       {
@@ -52,7 +53,7 @@ export default function NbaPlayer() {
             Search a NBA player by his first and or last name
           </Typography>
           <div className={classes.nbaPlayerDiv}>
-            <form>
+            <div>
               <TextField
                 className={classes.margin}
                 id="input-with-icon-textfield"
@@ -78,7 +79,7 @@ export default function NbaPlayer() {
               >
                 Search
               </Button>
-            </form>
+            </div>
             <PlayerTable nbaPlayers={nbaPlayers} />
           </div>
         </main>
