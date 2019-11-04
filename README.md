@@ -6,8 +6,7 @@
 
 The project it's a login and sign up view with the intention of save states on variables work with input changes and then when the main button is pressed show that the values are being saved.
 
-The main file after 'login' it's a navbar that calls for an open API. The project fetch this API asking for all NBA teams on the main view, the user can navigate around two other buttons it allow to see just the East conference NBA teams and the West conference NBA teams.
-
+The main file after 'login' it's a home page. It has two button that routes the project for two different views. The first view is the search for all NBA teams or saee an specific conference teams. The second view that can be accessed from home page it's the nba player search view. A table is rendered from an input field. On this input it's possible to search first and or last name and see the returned players that matched with this name on the table.
 The logout is being simulated with a exit button on the end of the navbar.
 
 ## Project Structure
@@ -29,16 +28,23 @@ project
 │   │
 │   └───views
 │   │   │   login.js
-│   │   │   main.js
+│   │   │   homeView.js
 │   │   │   signUp.js
+│   │   │   nbaPlayer.js
+│   │   │   nbaTeams.js
 │   │
 │   └───components
-│   │    │   copyright.js
-│   │    │   nbaTeamCard.js
+│   │   │   copyright.js
+│   │   │   nbaTeamCard.js
+│   │   │   footer.js
+│   │   │   playerTable.js
+│   │   │   toolbar.js
 │   │
 │   └───assets
-│       │   nbaLogo
-│       │   brick-abode.png
+│   │   │   nbaLogo
+│   │   │   brick-abode.png
+│   └───utils
+│       │   useStyles.js
 │
 └───public
     │   index.html
