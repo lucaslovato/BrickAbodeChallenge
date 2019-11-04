@@ -7,8 +7,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper
+    flexGrow: 1
   },
   paper: {
     marginTop: theme.spacing(8),
@@ -70,11 +69,11 @@ const useStyles = makeStyles(theme => ({
   },
   //nba player card styles
   tableRoot: {
-    width: "100%",
+    width: "75%",
     overflowX: "auto"
   },
   tableSize: {
-    minWidth: 650
+    maxWidth: 650
   },
   //home styles
   homeIcon: {
@@ -82,14 +81,12 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6)
   },
   heroButtons: {
     marginTop: theme.spacing(4)
   },
   footer: {
-    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6)
   },
   homeToolbar: {
@@ -99,9 +96,23 @@ const useStyles = makeStyles(theme => ({
   homeExitIcon: {
     color: "white"
   },
-  myTableTest: {
-    display: "hidden",
-    color: "red"
+  tableDiv: {
+    display: "flex",
+    justifyContent: "center"
+  },
+  nbaPlayerText: {
+    margin: theme.spacing(10)
+  },
+  margin: {
+    margin: theme.spacing(1)
+  },
+  nbaPlayerDiv: {
+    display: "flex",
+    margin: theme.spacing(10),
+    justifyContent: "center"
+  },
+  nbaPlayerButton: {
+    maxWidth: 250
   }
 }));
 
