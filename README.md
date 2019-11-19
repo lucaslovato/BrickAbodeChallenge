@@ -63,9 +63,11 @@ project
 - [MaterialUI](https://material-ui.com/)
   - ReactJS css library
 
-## This project was created using
+## This project was scaffolded using
 
 `npx create-react-app appName`
+
+more infor about create-react-app can be seen [here](https://github.com/facebook/create-react-app).
 
 ## Used API
 
