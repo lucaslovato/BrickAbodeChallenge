@@ -22,7 +22,7 @@ export default function NbaPlayer() {
 
   useEffect(() => {}, []);
 
-  const getNbaPlayer = async (nbaPlayerName, page = 0) => {
+  const getNbaPlayer = async (nbaPlayerName, page = 1) => {
     
     const response = await fetch(
       `https://free-nba.p.rapidapi.com/players?page=${page}&search=${nbaPlayerName}`,

@@ -1,0 +1,5 @@
+export default {
+    SET_PLAYER : "SET_PLAYER",
+    IS_LOADING: "IS_LOADING",
+    LOAD_NBAPLAYER_SAGA : "LOAD_NBAPLAYER_SAGA"
+};

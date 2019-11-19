@@ -11,6 +11,9 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import HomeIcon from "@material-ui/icons/Home";
 import { Link as ReactLink } from "react-router-dom";
 import Footer from "../components/footer";
+import { setIsLoadingNbaTeams, loadNbaTeams } from '../redux/core/action/nbaTeamActions';
+import { connect } from 'react-redux'
+import { bindActionCreators } from "redux"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,7 +57,8 @@ function LinkTab(props) {
   );
 }
 
-export default function NbaTeams() {
+const NbaTeams = (props) => {
+  
   const [nbaTeams, setNbaTeams] = useState([]);
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -64,24 +68,9 @@ export default function NbaTeams() {
   };
 
   useEffect(() => {
-    getAllNbaTeams();
-  }, []);
-
-  const getAllNbaTeams = async () => {
-    const response = await fetch(
-      "https://free-nba.p.rapidapi.com/teams?page=0",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "free-nba.p.rapidapi.com",
-          "x-rapidapi-key": "ac7cac8b25mshe61589dcf228915p1da28djsn29c26fd3e313"
-        }
-      }
-    );
-    const apiCallback = await response.json();
-    setNbaTeams(apiCallback.data);
-    console.log(apiCallback.data);
-  };
+    setNbaTeams(props.loadNbaTeams());
+    props.setIsLoadingNbaTeams();
+  }, [props]);
 
   return (
     <div className={classes.root}>
@@ -122,7 +111,8 @@ export default function NbaTeams() {
       </AppBar>
       <TabPanel value={value} index={0}>
         <div className={classes.cardDiv}>
-          {nbaTeams.map(nbaTeam => (
+          {console.log(nbaTeams) &&
+          nbaTeams.map(nbaTeam => (
             <NbaTeamCard
               key={nbaTeam.id}
               abbreviation={nbaTeam.abbreviation}
@@ -137,7 +127,8 @@ export default function NbaTeams() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className={classes.cardDiv}>
-          {nbaTeams.map(
+          {console.log(nbaTeams) &&
+          nbaTeams.map(
             nbaTeam =>
               nbaTeam.conference === "East" && (
                 <NbaTeamCard
@@ -155,7 +146,8 @@ export default function NbaTeams() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <div className={classes.cardDiv}>
-          {nbaTeams.map(
+          {console.log(nbaTeams) &&
+          nbaTeams.map(
             nbaTeam =>
               nbaTeam.conference === "West" && (
                 <NbaTeamCard
@@ -175,3 +167,14 @@ export default function NbaTeams() {
     </div>
   );
 }
+const mapStateToProps = state => ({
+  nbaTeams: state.nbaTeams,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  loadNbaTeams,
+  setIsLoadingNbaTeams,
+}, dispatch)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NbaTeams)

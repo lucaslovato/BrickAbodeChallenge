@@ -11,12 +11,12 @@ import Footer from "../components/footer";
 
 export default function Home() {
   const classes = useStyles();
-
   return (
     <React.Fragment>
       <CssBaseline />
-      <Toolbar />
-      <main>
+      <Toolbar  />
+      <div className={classes.body}>
+      <main >
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
@@ -59,6 +59,7 @@ export default function Home() {
           </Container>
         </div>
       </main>
+      </div>
       {/* Footer */}
       <Footer />
       {/* End footer */}

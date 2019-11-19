@@ -1,0 +1,5 @@
+export default {
+    SET_TEAMS : "SET_TEAMS",
+    IS_LOADING: "IS_LOADING",
+    LOAD_NBATEAMS_SAGA : "LOAD_NBATEAMS_SAGA"
+};
