@@ -87,7 +87,7 @@ Installing dependencies:
 
 `npm install`
 
-Then:
+Then run:
 
 `npm start`
 
